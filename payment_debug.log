@@ -1,0 +1,44 @@
+2025-03-20 16:11:14,295 - WARNING - Not Found: /favicon.ico
+2025-03-20 16:11:38,845 - INFO - POST data - payment_id: pay_Q910u29zDzglGF, order_id: order_Q910igdS4diWre
+2025-03-20 16:11:40,836 - INFO - Razorpay response: {'id': 'pay_Q910u29zDzglGF', 'entity': 'payment', 'amount': 109000, 'currency': 'INR', 'status': 'captured', 'order_id': 'order_Q910igdS4diWre', 'invoice_id': None, 'international': False, 'method': 'upi', 'amount_refunded': 0, 'refund_status': None, 'captured': True, 'description': 'Complete your cart purchase', 'card_id': None, 'bank': None, 'wallet': None, 'vpa': 'sneha@okhdfcbank', 'email': 'annmariya123@gmail.com', 'contact': '+916282221028', 'notes': [], 'fee': 2572, 'tax': 392, 'error_code': None, 'error_description': None, 'error_source': None, 'error_step': None, 'error_reason': None, 'acquirer_data': {'rrn': '156094512845', 'upi_transaction_id': '24477F6F17E9D4B9510BFA7506CEF42A'}, 'created_at': 1742467284, 'upi': {'vpa': 'sneha@okhdfcbank'}}
+2025-03-20 16:11:40,840 - INFO - Session email: annmariya123@gmail.com
+2025-03-20 16:11:40,842 - INFO - User: Event object (1)
+2025-03-20 16:11:40,923 - ERROR - Internal Server Error: /buy_all_decorations/
+Traceback (most recent call last):
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\project\CookDine\EVENT_BOOKING\views.py", line 314, in buy_all_decorations
+    logger.info(f"Cart items: {list(cart_items.values())}")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\project\CookDine\EVENT_BOOKING\views.py", line 930, in list
+    return render(request, 'chefcard.html', {'chefs': var})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\context.py", line 256, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sugit\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\context_processors.py", line 41, in debug
+    if settings.DEBUG and request.META.get("REMOTE_ADDR") in settings.INTERNAL_IPS:
+                          ^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'META'
+2025-03-20 16:13:59,380 - INFO - C:\project\CookDine\EVENT_BOOKING\views.py changed, reloading.
